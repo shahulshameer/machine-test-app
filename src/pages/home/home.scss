@@ -1,0 +1,201 @@
+.home-wrapper {
+    background-color: #fbfbfb;
+    margin-left: 150px;
+    margin-right: 150px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+
+        h4 {
+            font-size: 1.5rem;
+            color: #3d3d3d;
+        }
+
+        .navbar-right {
+            
+            ul {
+                display: block;
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 20px;
+
+                span {
+                    display: flex;
+                    width: 50px;
+                    height: 42px;
+                    align-items: center;
+                    color: #ccc;
+                    position: relative;
+
+                    &::after{
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        content: "";
+                        top: 100%;
+                        margin: auto;
+                        height: 2px;
+                        width: 0px;
+                        background-color: #ccc;
+                        transition: all .25s ease-in-out;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                        background-color: #3e3e3e;
+                    }
+
+                    &.active::after {
+                       width: 100%;
+                       background-color: #3e3e3e;
+                    }
+                }
+            }
+
+            .open-icon {
+                display: none;
+            }
+        }
+
+    }
+
+    .countries {
+        min-height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: space-between;
+        gap: 1rem;
+
+        .country {
+            min-width: 317px;
+            padding: 1rem;
+            border: 2px solid #3e3e3e;
+            background-color:#ffffff;
+            display: flex;
+
+            img {
+                width: 127px;
+                height: 96px;
+            }
+
+            .details {
+                padding-left: 1rem;
+                h4 {
+                    font-size: 1.5rem;
+                    color: #3d3d3d;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-top: 10px;
+                    color: #6f6f6f;
+                }
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 80px;
+        .links {
+
+            .link-items {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+
+                span {
+                    display: inline-block;
+                    width: 48px;
+                    height: 48px;
+                    border:2px solid #3e3e3e;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+
+                    .item {
+                        width: 20px;
+                        height: 20px;
+                        color: #3e3e3e;
+                    }
+                }
+            }
+        }
+
+        .texts {
+            margin-top: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            p {
+                font-weight: bold;
+                color: #3d3d3d;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .home-wrapper {
+        margin-left: 30px;
+        margin-right: 30px;
+
+        nav {
+            .navbar-right {
+                ul {
+                    display: none;
+                }
+
+               .open-icon {
+                  display: block;
+                  width: 24px;
+                  height: 24px;
+               }
+            }
+        }       
+
+        .countries {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-content: space-between;
+            gap: 1rem;
+
+            .country {
+                min-width: 317px;
+                padding: 10px;
+                border: 2px solid #3e3e3e;
+                display: flex;
+
+                img {
+                    object-fit: cover;
+                    width: 48px;
+                    height: 46px;
+                }
+
+                .details {
+                    padding-left: 10px;
+
+                    h4 {
+                        font-size: 1rem;
+                        color: #3d3d3d;
+                    }
+    
+                    span {
+                        display: inline-block;
+                        margin-top: 5px;
+                        color: #6f6f6f;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
